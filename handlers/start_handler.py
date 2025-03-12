@@ -154,7 +154,10 @@ async def process_product_(callback: CallbackQuery, state: State, bot: Bot):
     """
     logging.info('process_product_')
     select = callback.data
-    await callback.message.delete()
+    try:
+        await callback.message.delete()
+    except:
+        pass
     if select == 'product_correction_file':
         await callback.message.answer_document(
             document='BQACAgIAAxkBAAIBI2fB2M_7iJczO2fXhJI7pBpE3YNFAAK4aAACmTkQSn4WJ96c0NGVNgQ',
