@@ -41,7 +41,7 @@ def keyboard_work_product() -> InlineKeyboardMarkup:
 
 def keyboard_mentoring() -> InlineKeyboardMarkup:
     logging.info("keyboard_mentoring")
-    button_1 = InlineKeyboardButton(text='Цель и задачи=-зх',
+    button_1 = InlineKeyboardButton(text='Цель и задачи',
                                     callback_data=f'mentoring_goals_and_objectives')
     button_2 = InlineKeyboardButton(text='Подать заявку', callback_data=f'mentoring_submit_a_request')
     button_back = InlineKeyboardButton(text='Назад', callback_data=f'back')
