@@ -100,6 +100,7 @@ async def change_role_admin(message: Message, state: FSMContext, bot: Bot):
                               '- Сердюков Антон @Dear_Friend1986\n'
                               '- Тиманин Александр @SomeAlexTim\n'
                               '- Шелепугина Анна @AnnShelli\n'
+                              '- Фролова Алена @AliFroli\n'
                               'Руководитель направления учетов:\n'
                               '- Макаренко Ксения @coffeinthecity')
 
@@ -131,7 +132,10 @@ async def process_accounting(callback: CallbackQuery, state: State, bot: Bot):
     """
     logging.info('process_accounting')
     select = callback.data
-    await callback.message.delete()
+    try:
+        await callback.message.delete()
+    except:
+        pass
     if select == 'accounting_training_manual':
         await callback.message.answer_document(
             document='BQACAgIAAxkBAAIBHWfB15USGtvVfVVVC2nyNiP9yjYXAAKWaAACmTkQStO4cgrvc4caNgQ',
@@ -254,9 +258,9 @@ async def process_product_(callback: CallbackQuery, state: State, bot: Bot):
                  f'Исключение: если подана заявка и по ней еще решается вопрос')
     elif select == 'product_сalculate_the_optimal_CSR':
         await callback.message.answer_document(
-            document=f'BQACAgIAAxkBAAIBJGfB3DBha2GR8qdeqYHLff0envpMAAIQaQACmTkQSscv_t0pRyp2NgQ',
+            document='BQACAgIAAxkBAAIGBWhDKdYAAYTMP1O0s002SdPk0WZLYwAC7nYAAkwOGEqLtzJWZpIXGjYE',
             caption='Посчитать оптимальный КСО:')
-
+        # document=f'BQACAgIAAxkBAAIBJGfB3DBha2GR8qdeqYHLff0envpMAAIQaQACmTkQSscv_t0pRyp2NgQ',
 
 @router.callback_query(F.data.startswith('mentoring_'))
 @error_handler
