@@ -258,7 +258,7 @@ async def process_product_(callback: CallbackQuery, state: State, bot: Bot):
                  f'Исключение: если подана заявка и по ней еще решается вопрос')
     elif select == 'product_сalculate_the_optimal_CSR':
         await callback.message.answer_document(
-            document='BQACAgIAAxkBAAIGBWhDKdYAAYTMP1O0s002SdPk0WZLYwAC7nYAAkwOGEqLtzJWZpIXGjYE',
+            document='BQACAgIAAxkBAAIGKWhDNhNK6AABx5ksAaPeY6rhuyypSQACsXIAAkwOIEoe9yDIeyjxezYE',
             caption='Посчитать оптимальный КСО:')
         # document=f'BQACAgIAAxkBAAIBJGfB3DBha2GR8qdeqYHLff0envpMAAIQaQACmTkQSscv_t0pRyp2NgQ',
 
